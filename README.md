@@ -12,7 +12,7 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Planned phases
 
-1. Skeleton & contracts
+1. Skeleton & schemas
 2. Generic stem executor
 3. Initialization from examples
 4. Evaluation system
