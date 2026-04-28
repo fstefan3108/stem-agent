@@ -1,9 +1,10 @@
-from pydantic import BaseModel, Field, model_validator
+from typing import Annotated
+from pydantic import BaseModel, Field, model_validator, StringConstraints
+
 
 class PromptSection(BaseModel):
     """Represents a single section inside an evolving adaptable prompt."""
-    name: str = Field(min_length=1)
-    content: str = Field(min_length=1)
+    content: Annotated[str, StringConstraints(min_length=1, strip_whitespace=True)]
     version: int = Field(default=1, ge=1)
 
     mutable: bool = True

@@ -13,12 +13,13 @@ Phase 0 in progress.
 Completed:
 - Project structure and repository setup
 - PromptSection schema with validation
-- Contract tests for prompt section behavior
+- AgentConfig schema with validation
+- Tests for PromptSection, AgentConfig schemas
 
 Next:
-- AgentConfig schema
 - EvaluationResult schema
 - EvolutionRecord schema
+- TaskExample schema
 
 ## Development Approach
 
