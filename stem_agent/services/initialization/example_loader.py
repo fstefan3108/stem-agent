@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 
 def load_task_examples(path: Path = Path("data/examples.json")) -> list[TaskExample]:
+    """Load and validate task examples from a JSON dataset file."""
     if not path.exists():
         raise FileNotFoundError(f"Dataset file not found: {path}")
     data = json.loads(path.read_text(encoding="utf-8"))

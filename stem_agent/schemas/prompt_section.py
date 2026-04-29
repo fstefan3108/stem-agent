@@ -22,3 +22,9 @@ class PromptSection(BaseModel):
             raise ValueError("A mutation reason must be provided when version is greater than 1.")
 
         return self
+
+class RefinedPromptSections(BaseModel):
+    role: Annotated[str, StringConstraints(min_length=1, strip_whitespace=True)]
+    strategy: Annotated[str, StringConstraints(min_length=1, strip_whitespace=True)]
+    quality_constraints: Annotated[str, StringConstraints(min_length=1, strip_whitespace=True)]
+    output_format: Annotated[str, StringConstraints(min_length=1, strip_whitespace=True)]

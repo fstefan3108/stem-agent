@@ -12,17 +12,17 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Phase 1 Completed - Generic Stem Agent
 
-## Phase 2 In Progress - Examples Dataset & Config Refinement Engine
+## Phase 2 - Specialization -> DROPPED
+# Reasoning:
+- I've observed that the specializaiton phase was unneccessary and even contradictory to our core concept
+of the project. The main discovery from this unsuccessful phase is: *Specialization is part of evolution*
+meaning that not only was specialization redundant, but it turned the agent from generic to an immediate
+task-specific expert, making progress tracking too fast and unable to monitor. 
+The main initial reason for a specialization phase was a mindset I had in the beginning that the agent
+should be able to evolve and adapt to multiple tasks, but for the scope of this project we are keeping
+it focused on one single specific task.
 
-# Completed
-- Created the examples.json dataset from which the config refinement engine mechanism will create
-new AgentConfig's
-- Created the examples.json dataset parser function that loads them into our TaskExample schema and
-returns a list of TaskExample's. Covered all identified failure cases and tested for each of them,
-added safeguards for each one.
-
-# To do
-- Create the ConfigRefinementEngine service/mechanism
+## NEW Phase 2 - Evaluation of Performance - IN PROGRESS
 
 ## Development Approach
 
