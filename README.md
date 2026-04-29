@@ -14,7 +14,8 @@ Completed:
 - Project structure and repository setup
 - PromptSection schema with validation
 - AgentConfig schema with validation
-- Tests for PromptSection, AgentConfig schemas
+- EvaluationResult schema with validation and computed total score field
+- Tests for PromptSection, AgentConfig, EvaluationResult schemas, covered identified edge cases for now
 
 Next:
 - EvaluationResult schema

@@ -15,7 +15,7 @@ def test_valid_prompt_section():
     assert prompt_section.mutable is True
     assert prompt_section.mutation_reason == "Improved aspect coverage"
 
-def test_invalid_prompt_section_content_empty_string():
+def test_invalid_content_empty_string():
     with pytest.raises(ValidationError):
         PromptSection(
             content="",
@@ -24,7 +24,7 @@ def test_invalid_prompt_section_content_empty_string():
             mutation_reason=None
         )
 
-def test_invalid_prompt_section_content_white_space():
+def test_invalid_content_whitespace():
     with pytest.raises(ValidationError):
         PromptSection(
             content=" ",
@@ -33,7 +33,7 @@ def test_invalid_prompt_section_content_white_space():
             mutation_reason=None
         )
 
-def test_invalid_prompt_section_version():
+def test_invalid_version():
     with pytest.raises(ValidationError):
         PromptSection(
             content="You are an agent",
@@ -42,7 +42,7 @@ def test_invalid_prompt_section_version():
             mutation_reason=None
         )
 
-def test_invalid_prompt_non_mutable_section_version():
+def test_invalid_non_mutable_section_version():
     with pytest.raises(ValidationError):
         PromptSection(
             content="You are an agent",
@@ -51,7 +51,7 @@ def test_invalid_prompt_non_mutable_section_version():
             mutation_reason=None
         )
 
-def test_invalid_prompt_non_mutable_section_has_mutation_reason():
+def test_invalid_non_mutable_section_has_mutation_reason():
     with pytest.raises(ValidationError):
         PromptSection(
             content="You are an agent",
@@ -60,7 +60,7 @@ def test_invalid_prompt_non_mutable_section_has_mutation_reason():
             mutation_reason="Improved aspect coverage"
         )
 
-def test_invalid_prompt_mutable_section_without_mutation_reason():
+def test_invalid_mutable_section_without_mutation_reason():
     with pytest.raises(ValidationError):
         PromptSection(
             content="You are an agent",

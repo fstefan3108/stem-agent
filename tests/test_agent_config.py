@@ -33,7 +33,7 @@ def test_valid_agent_config(valid_prompt_sections):
     assert agent_config.stages == ["stage1", "stage2"]
     assert agent_config.created_from == "initialization phase"
 
-def test_invalid_agent_config_task_class_empty_string(valid_prompt_sections):
+def test_invalid_task_class_empty_string(valid_prompt_sections):
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="",
@@ -45,7 +45,7 @@ def test_invalid_agent_config_task_class_empty_string(valid_prompt_sections):
             created_from="initialization phase"
         )
 
-def test_invalid_agent_config_task_class_white_space(valid_prompt_sections):
+def test_invalid_task_class_whitespace(valid_prompt_sections):
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class=" ",
@@ -57,7 +57,7 @@ def test_invalid_agent_config_task_class_white_space(valid_prompt_sections):
             created_from="initialization phase"
         )
 
-def test_invalid_agent_config_max_steps_greater_than_ten(valid_prompt_sections):
+def test_invalid_max_steps_above_ten(valid_prompt_sections):
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="deep researcher",
@@ -69,7 +69,7 @@ def test_invalid_agent_config_max_steps_greater_than_ten(valid_prompt_sections):
             created_from="initialization phase"
         )
 
-def test_invalid_agent_config_task_class_max_steps_less_than_one(valid_prompt_sections):
+def test_invalid_max_steps_below_one(valid_prompt_sections):
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="deep researcher",
@@ -81,7 +81,7 @@ def test_invalid_agent_config_task_class_max_steps_less_than_one(valid_prompt_se
             created_from="initialization phase"
         )
 
-def test_invalid_agent_config_version(valid_prompt_sections):
+def test_invalid_version(valid_prompt_sections):
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="deep researcher",
@@ -93,7 +93,7 @@ def test_invalid_agent_config_version(valid_prompt_sections):
             created_from="initialization phase"
         )
 
-def test_invalid_agent_config_created_from_empty_string(valid_prompt_sections):
+def test_invalid_created_from_empty_string(valid_prompt_sections):
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="deep researcher",
@@ -105,7 +105,7 @@ def test_invalid_agent_config_created_from_empty_string(valid_prompt_sections):
             created_from = ""
         )
 
-def test_invalid_agent_config_created_from_white_space(valid_prompt_sections):
+def test_invalid_created_from_whitespace(valid_prompt_sections):
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="deep researcher",
@@ -117,7 +117,7 @@ def test_invalid_agent_config_created_from_white_space(valid_prompt_sections):
             created_from = " "
         )
 
-def test_invalid_agent_config_missing_section_keys():
+def test_invalid_missing_section_keys():
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="deep researcher",
@@ -133,7 +133,7 @@ def test_invalid_agent_config_missing_section_keys():
             created_from="initialization phase"
         )
 
-def test_invalid_agent_config_extra_section_keys():
+def test_invalid_extra_section_keys():
     with pytest.raises(ValidationError):
         AgentConfig(
             task_class="deep researcher",
