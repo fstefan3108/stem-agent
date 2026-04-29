@@ -1,6 +1,5 @@
+from stem_agent.schemas.enums import PromptSectionKey
+
 REQUIRED_PROMPT_SECTION_KEYS = {
-    "role",
-    "strategy",
-    "quality_constraints",
-    "output_format",
+    section.value for section in PromptSectionKey
 }
