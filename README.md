@@ -10,29 +10,24 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Phase 0 Completed — Foundations & Contracts
 
-Defined the core system contracts for the stem agent prototype:
+## Phase 1 In Progress - Generic Stem Agent
+- Build the simplest possible generic stem agent that can run one task end-to-end.
+- No evolution yet.
+- No mutation.
+- No self-specializing yet.
+- Just execution.
 
-- Implemented schema “genome” models:
-  - PromptSection
-  - AgentConfig
-  - EvaluationResult
-  - EvolutionRecord
-  - TaskExample
+Goal of Phase 1:
+- Create a minimal baseline we can work from in upcoming phases such as evaluation, evolution, etc.
+- The output of the agent in this phase is expected to be bad.
 
-- Added validation rules and safeguards for:
-  - prompt mutation integrity
-  - configuration consistency
-  - evaluation scoring bounds
-  - evolution trace constraints
-  - dataset example structure
+# Completed
+- Created the StemAgent LangChain class
+- Covered edge cases such as the api call failing and empty strings for queries.
+- Created tests for a successful response and for invalid ones
 
-- Wrote contract/unit tests (51 passing) covering valid behavior, edge cases, and failure conditions.
-
-Outcome:
-The project now has a validated foundation for initialization, execution, evaluation, and evolution before implementing the runtime agent loop.
-
-Next:
-- Phase 1
+# To do
+- Implement a factory for the AgentConfig
 
 ## Development Approach
 
