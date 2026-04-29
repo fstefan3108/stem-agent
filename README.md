@@ -10,28 +10,16 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Phase 0 Completed — Foundations & Contracts
 
-## Phase 1 In Progress - Generic Stem Agent
-- Build the simplest possible generic stem agent that can run one task end-to-end.
-- No evolution yet.
-- No mutation.
-- No self-specializing yet.
-- Just execution.
+## Phase 1 Completed - Generic Stem Agent
 
-Goal of Phase 1:
-- Create a minimal baseline we can work from in upcoming phases such as evaluation, evolution, etc.
-- The output of the agent in this phase is expected to be bad.
+## Phase 2 In Progress - Examples Dataset & Config Refinement Engine
 
 # Completed
-- Created the StemAgent LangChain class
-- Covered edge cases such as the api call failing and empty strings for queries.
-- Created tests for a successful response and for invalid ones
-- Implemented the factory function for generating default stem AgentConfig
-- Huge checkpoint: successfully ran the baseline version of the stem agent, and he's answer was as
-expected - generic, vague, bad, off-topic. This establishes our foundation point, now we have
-where to evolve from - which is a huge step.
+- Created the examples.json dataset from which the config refinement engine mechanism will create
+new AgentConfig's
 
 # To do
-- Begin Phase 2
+- Create the ConfigRefinementEngine service/mechanism
 
 ## Development Approach
 

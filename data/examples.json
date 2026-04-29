@@ -1,0 +1,63 @@
+[
+  {
+    "task_input": "Research the current state of AI agent frameworks.",
+    "example_output": "There are many AI agent frameworks available today. Some popular ones include LangChain, AutoGen, and CrewAI. These frameworks help developers build AI agents. LangChain is very popular. AutoGen is made by Microsoft. CrewAI focuses on multi-agent systems. AI agents are becoming more important in software development.",
+    "quality_label": "bad",
+    "notes": [
+      "No structure or breakdown of the research task",
+      "Claims are not supported or grounded in any source",
+      "No comparison or tradeoffs between frameworks",
+      "Reads like a list of facts, not a research output",
+      "No conclusion or recommendation"
+    ]
+  },
+  {
+    "task_input": "What are the main AI agent frameworks available today?",
+    "example_output": "After researching this topic extensively, I can confirm that AI agent frameworks are very important and widely used. Many companies are using them. The field is growing fast. There are open source and closed source options. You should pick the one that fits your needs.",
+    "quality_label": "bad",
+    "notes": [
+      "Vague and generic — no specific frameworks named with detail",
+      "No grounding — 'researched extensively' but no evidence of it",
+      "No actionable insight or comparison",
+      "Reads like filler content",
+      "Fails to address any specific aspect of the question"
+    ]
+  },
+  {
+    "task_input": "Give me a comprehensive comparison of the leading AI agent frameworks.",
+    "example_output": "## Overview\nAI agent frameworks have matured significantly in 2024-2025, moving from simple tool-calling wrappers to full multi-agent orchestration systems.\n\n## Key Frameworks\n**LangChain / LangGraph**: The most widely adopted framework. LangGraph adds stateful graph-based orchestration on top of LangChain, enabling complex multi-step agents with cycles and conditional branching. Best for: complex pipelines requiring fine control.\n\n**AutoGen (Microsoft)**: Focuses on multi-agent conversation patterns. Agents communicate via structured messages. Best for: collaborative agent setups where agents debate or verify each other.\n\n**CrewAI**: Higher-level abstraction built on LangChain. Simplifies role-based multi-agent systems. Best for: teams wanting quick prototypes without deep framework knowledge.\n\n## Tradeoffs\n- LangGraph offers the most control but has a steeper learning curve\n- AutoGen excels at agent collaboration but is harder to debug\n- CrewAI is fastest to prototype but least flexible at scale\n\n## Conclusion\nFor production systems requiring reliability and observability, LangGraph is currently the strongest choice. For rapid prototyping or educational use, CrewAI offers the lowest barrier to entry.",
+    "quality_label": "good",
+    "notes": [
+      "Clear structure with sections: overview, frameworks, tradeoffs, conclusion",
+      "Each framework is described with a specific use case",
+      "Tradeoffs are explicit and comparative",
+      "Conclusion is actionable — helps reader make a decision",
+      "Grounded in specific, accurate details"
+    ]
+  },
+  {
+    "task_input": "What is the current landscape of AI agent frameworks and where is the field heading?",
+    "example_output": "## Research Summary: AI Agent Frameworks (2025)\n\n### What are AI agent frameworks?\nAgent frameworks provide the scaffolding for LLM-powered systems that can plan, use tools, and execute multi-step tasks autonomously.\n\n### Current Landscape\nThe space has consolidated around a few dominant approaches:\n1. **Graph-based orchestration** (LangGraph, Koog) — agents as stateful graphs with explicit control flow\n2. **Conversation-based** (AutoGen) — agents as message-passing entities\n3. **Role-based crews** (CrewAI, CAMEL) — agents assigned roles within a team\n\n### Key Trends\n- Shift toward observability: tools like Langfuse and OpenTelemetry are being integrated directly into agent runs\n- Memory management becoming critical: context window limits drive demand for compression and summarization strategies\n- Standardization emerging: MCP (Model Context Protocol) gaining adoption as a tool interface standard\n\n### Recommendation\nFor teams building production agents today: LangGraph for control-heavy pipelines, AutoGen for collaborative verification tasks. Monitor Koog (JetBrains) as an emerging Kotlin-native option.\n\n### Limitations of this research\nThis analysis is based on publicly available documentation and community discussion as of early 2025. Benchmarks were not run.",
+    "quality_label": "good",
+    "notes": [
+      "Decomposes the topic before answering — defines terms first",
+      "Groups frameworks by approach rather than listing them individually",
+      "Identifies trends beyond just listing tools",
+      "Gives a concrete recommendation with reasoning",
+      "Acknowledges limitations of the research — shows intellectual honesty",
+      "Would genuinely help someone make an informed decision"
+    ]
+  },
+  {
+    "task_input": "Can you research and summarize the top AI agent frameworks?",
+    "example_output": "## AI Agent Frameworks Overview\n\nLangChain is the most popular framework and has millions of downloads. It supports many LLM providers and has a large ecosystem.\n\nLangGraph is built on top of LangChain. It uses a graph structure.\n\nAutoGen is from Microsoft Research. It is used for multi-agent conversations.\n\nCrewAI is a newer framework that is growing in popularity.\n\n## Summary\nAll of these frameworks are useful. The best one depends on your specific use case and requirements.",
+    "quality_label": "edge_case",
+    "notes": [
+      "Has surface-level structure (headers) but no depth behind them",
+      "Mentions correct frameworks but provides no analysis",
+      "Summary is generic and adds no value",
+      "Looks like a good answer at first glance but fails on depth and tradeoffs",
+      "Represents the 'structured but shallow' failure mode the agent must learn to avoid"
+    ]
+  }
+]
