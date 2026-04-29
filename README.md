@@ -17,6 +17,9 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 # Completed
 - Created the examples.json dataset from which the config refinement engine mechanism will create
 new AgentConfig's
+- Created the examples.json dataset parser function that loads them into our TaskExample schema and
+returns a list of TaskExample's. Covered all identified failure cases and tested for each of them,
+added safeguards for each one.
 
 # To do
 - Create the ConfigRefinementEngine service/mechanism
