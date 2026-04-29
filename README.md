@@ -25,9 +25,13 @@ Goal of Phase 1:
 - Created the StemAgent LangChain class
 - Covered edge cases such as the api call failing and empty strings for queries.
 - Created tests for a successful response and for invalid ones
+- Implemented the factory function for generating default stem AgentConfig
+- Huge checkpoint: successfully ran the baseline version of the stem agent, and he's answer was as
+expected - generic, vague, bad, off-topic. This establishes our foundation point, now we have
+where to evolve from - which is a huge step.
 
 # To do
-- Implement a factory for the AgentConfig
+- Begin Phase 2
 
 ## Development Approach
 
