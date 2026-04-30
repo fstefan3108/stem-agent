@@ -1,6 +1,10 @@
+import traceback
+
 from stem_agent.agents.stem_agent import StemAgent
 from stem_agent.core.logger import logger
+from stem_agent.services.evaluation.evaluator import EvaluationService
 from stem_agent.services.initialization.agent_config_factory import generate_default_agent_config
+from stem_agent.services.initialization.example_loader import load_scoring_examples
 
 
 def main():
@@ -14,9 +18,14 @@ def main():
 
     try:
         answer = stem_agent.run(user_query)
-        logger.info(f"Stem Agent: {answer.strip()}")
+        logger.info(f"[STEM AGENT]: {answer.strip()}")
+
+        evaluator = EvaluationService(load_scoring_examples())
+        evaluation = evaluator.evaluate(user_task=user_query, stem_agent_answer=answer)
+        logger.info(f"[EVALUATOR]: {evaluation}")
     except Exception as e:
         logger.error(f"Execution failed: {e}")
+        traceback.print_exc()
 
 if __name__ == "__main__":
     main()

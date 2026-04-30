@@ -2,6 +2,7 @@ from unittest.mock import patch, MagicMock
 import pytest
 
 from stem_agent.agents.stem_agent import StemAgent
+from stem_agent.prompts.stem_agent import build_stem_agent_prompt
 from stem_agent.schemas.agent_config import AgentConfig
 from stem_agent.schemas.prompt_section import PromptSection
 
@@ -46,8 +47,7 @@ def test_invalid_run_whitespace(mock_openai, valid_agent_config):
 @patch("stem_agent.agents.stem_agent.ChatOpenAI")
 def test_build_prompt_contains_all_sections(mock_openai, valid_agent_config):
     mock_openai.return_value = MagicMock()
-    agent = StemAgent(valid_agent_config)
-    prompt = agent._build_prompt("Research AI frameworks.")
+    prompt = build_stem_agent_prompt("Research AI frameworks.", valid_agent_config)
 
     assert "You are a generic assistant." in prompt
     assert "Answer directly." in prompt

@@ -10,28 +10,25 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Phase 0 Completed — Foundations & Contracts
 
-## Phase 1 In Progress - Generic Stem Agent
-- Build the simplest possible generic stem agent that can run one task end-to-end.
-- No evolution yet.
-- No mutation.
-- No self-specializing yet.
-- Just execution.
+## Phase 1 Completed - Generic Stem Agent
 
-Goal of Phase 1:
-- Create a minimal baseline we can work from in upcoming phases such as evaluation, evolution, etc.
-- The output of the agent in this phase is expected to be bad.
+## Phase 2 - Evaluation of Performance COMPLETED
 
-# Completed
-- Created the StemAgent LangChain class
-- Covered edge cases such as the api call failing and empty strings for queries.
-- Created tests for a successful response and for invalid ones
-- Implemented the factory function for generating default stem AgentConfig
-- Huge checkpoint: successfully ran the baseline version of the stem agent, and he's answer was as
-expected - generic, vague, bad, off-topic. This establishes our foundation point, now we have
-where to evolve from - which is a huge step.
+# Added:
+- EvaluatorService - the main service for evaluating agent's responses and performance. It grades
+the agent's answer based on strictly defined metrics, rules and guidelines. The llm does the intelligent
+grading, then outputs a structured EvaluationResult.
 
-# To do
-- Begin Phase 2
+Current Limitation: Both the evaluator and the stem agent itself seem to not realise when they misinterpet
+what the user is actually asking about. Might improve with an inclusion of a web search tool later on.
+
+- Updated the dataset to be a dataset of scoring examples used to tell the evaluator how to properly
+score agent's answers.
+- Created tests for the evaluator and covered identified edge cases.
+- Minor code optimizations such as moving prompts outside of service classes, etc.
+
+# Next:
+- Start Phase 3
 
 ## Development Approach
 

@@ -1,9 +1,8 @@
-from datetime import datetime, UTC
-from textwrap import dedent
 from langchain_openai import ChatOpenAI
 
 from stem_agent.core.logger import logger
 from stem_agent.core.settings import settings
+from stem_agent.prompts.stem_agent import build_stem_agent_prompt
 from stem_agent.schemas.agent_config import AgentConfig
 
 
@@ -23,31 +22,9 @@ class StemAgent:
             raise ValueError("User query cannot be empty or whitespace.")
 
         try:
-            prompt = self._build_prompt(user_query)
+            prompt = build_stem_agent_prompt(user_query=user_query, agent_config=self.config)
             return self.llm.invoke(prompt).content
 
         except Exception as e:
             logger.error(f"Failed to run agent: {e}")
             raise
-
-    def _build_prompt(self, user_query: str) -> str:
-        user_query = user_query.strip()
-        prompt = dedent(f"""
-CURRENT DATE AND TIME: {datetime.now(UTC)}
-
-ROLE
-{self.config.prompt_sections["role"].content}
-
-STRATEGY
-{self.config.prompt_sections["strategy"].content}
-
-QUALITY CONSTRAINTS
-{self.config.prompt_sections["quality_constraints"].content}
-
-OUTPUT FORMAT
-{self.config.prompt_sections["output_format"].content}
-
-TASK
-{user_query}
-        """).strip()
-        return prompt

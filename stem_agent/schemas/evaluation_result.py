@@ -1,5 +1,5 @@
 from typing import Annotated
-from pydantic import BaseModel, StringConstraints, Field, computed_field
+from pydantic import BaseModel, StringConstraints, Field
 
 
 class EvaluationResult(BaseModel):
@@ -9,6 +9,6 @@ class EvaluationResult(BaseModel):
     insight: float = Field(ge=1, le=5)
     feedback: Annotated[str, StringConstraints(min_length=1, strip_whitespace=True)]
 
-    @computed_field
+    @property
     def total_score(self) -> float:
         return (self.coverage + self.grounding + self.insight) / 3

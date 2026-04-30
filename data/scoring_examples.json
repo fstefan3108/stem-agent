@@ -1,0 +1,52 @@
+[
+  {
+    "task_input": "Research the current state of AI agent frameworks.",
+    "example_output": "There are many AI agent frameworks. LangChain is popular. AutoGen is from Microsoft. CrewAI is for multi-agent. They are all useful.",
+    "coverage": 1.0,
+    "grounding": 1.5,
+    "insight": 1.0,
+    "coverage_rationale": "Names a few frameworks but addresses no aspect of the task — no comparison, no use cases, no tradeoffs. Treats the request as a naming exercise.",
+    "grounding_rationale": "Names real frameworks but provides no specifics. Claims like 'they are all useful' are unsupported.",
+    "insight_rationale": "No analysis, no comparison, no recommendation. Pure listing with no transformation of information."
+  },
+  {
+    "task_input": "What are the main AI agent frameworks available today?",
+    "example_output": "AI agent frameworks have grown rapidly. The most well-known include LangChain, AutoGen, and CrewAI. LangChain has the largest community. AutoGen specializes in multi-agent conversations. CrewAI is newer but gaining traction. Each framework has its own strengths and weaknesses depending on the use case.",
+    "coverage": 2.5,
+    "grounding": 2.5,
+    "insight": 2.0,
+    "coverage_rationale": "Names major frameworks and gives one-line descriptions but does not address selection criteria, tradeoffs, or future direction.",
+    "grounding_rationale": "Specific framework names with one factual detail each. No depth on architecture, ecosystem, or concrete use cases.",
+    "insight_rationale": "Mentions strengths/weaknesses exist but does not articulate what they are. No comparison structure, no decision guidance."
+  },
+  {
+    "task_input": "Can you research and summarize the top AI agent frameworks?",
+    "example_output": "## AI Agent Frameworks\n\nLangChain is the most popular framework with millions of downloads. It supports many providers.\n\nLangGraph is built on LangChain and uses graphs.\n\nAutoGen is from Microsoft Research for multi-agent conversations.\n\nCrewAI is newer and growing.\n\n## Summary\nAll frameworks are useful. The best one depends on your use case.",
+    "coverage": 3.0,
+    "grounding": 3.0,
+    "insight": 2.5,
+    "coverage_rationale": "Covers the main frameworks with structure but treats each shallowly. Misses tradeoffs and use case mapping.",
+    "grounding_rationale": "Specific names and one concrete fact per framework, but no version, ecosystem detail, or supporting context.",
+    "insight_rationale": "Has structural elements suggesting analysis but the actual content is descriptive, not analytical. Generic summary."
+  },
+  {
+    "task_input": "Give me a comprehensive comparison of the leading AI agent frameworks.",
+    "example_output": "## Overview\nAI agent frameworks have matured into distinct architectural approaches.\n\n## Frameworks\n**LangGraph**: Graph-based stateful orchestration on top of LangChain. Best for production pipelines requiring fine control. Steep learning curve.\n\n**AutoGen (Microsoft)**: Conversation-based multi-agent collaboration. Best for verification/debate workflows. Harder to debug.\n\n**CrewAI**: Role-based abstraction. Best for fast prototyping. Limited at scale.\n\n## Tradeoffs\n- Control vs. simplicity: LangGraph wins on control, CrewAI on speed-to-prototype\n- Single-agent vs multi-agent: LangGraph and AutoGen serve different paradigms\n\n## Recommendation\nFor production reliability, choose LangGraph. For rapid prototyping, choose CrewAI.",
+    "coverage": 4.0,
+    "grounding": 4.0,
+    "insight": 4.0,
+    "coverage_rationale": "Covers frameworks, tradeoffs, and recommendation. Slightly under-covers emerging options and ecosystem trends.",
+    "grounding_rationale": "Concrete claims tied to specific frameworks with named characteristics. Could go deeper with versions or benchmarks.",
+    "insight_rationale": "Clear comparative analysis with explicit tradeoffs and an actionable recommendation. Stops just short of synthesis on field direction."
+  },
+  {
+    "task_input": "What is the current landscape of AI agent frameworks and where is the field heading?",
+    "example_output": "## AI Agent Frameworks (2025)\n\n### Defining the Space\nAgent frameworks provide scaffolding for LLM-powered systems that plan, use tools, and execute multi-step tasks.\n\n### Architectural Categories\n1. **Graph-based orchestration** — LangGraph, Koog\n2. **Conversation-based** — AutoGen\n3. **Role-based crews** — CrewAI, CAMEL\n\n### Key Trends\n- Observability becoming first-class (Langfuse, OpenTelemetry integration)\n- Memory management as the central unsolved problem\n- MCP emerging as a tool interface standard\n\n### Recommendation\nLangGraph for production pipelines today. Watch MCP closely — tool standardization will reshape framework selection within 12 months.\n\n### Limitations\nBased on documentation and community discussion, no benchmarks run.",
+    "coverage": 5.0,
+    "grounding": 4.5,
+    "insight": 5.0,
+    "coverage_rationale": "Defines the space, categorizes by architecture, identifies trends, gives a recommendation, acknowledges limitations. Full coverage of the question's scope.",
+    "grounding_rationale": "Concrete framework names, named tools (Langfuse, OpenTelemetry, MCP), and explicit limitations of the analysis. Slightly short of perfect — no specific version numbers or quantitative claims.",
+    "insight_rationale": "Goes beyond listing to categorize, identify trends, predict field direction, and give a time-bounded recommendation. Strong synthesis."
+  }
+]
