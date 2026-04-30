@@ -12,23 +12,19 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Phase 1 Completed - Generic Stem Agent
 
-## Phase 2 - Evaluation of Performance COMPLETED
+## Phase 2 Completed - Evaluation of Performance
 
-# Added:
-- EvaluatorService - the main service for evaluating agent's responses and performance. It grades
-the agent's answer based on strictly defined metrics, rules and guidelines. The llm does the intelligent
-grading, then outputs a structured EvaluationResult.
+## Phase 3 In Progress - Evolution, the Core of the Project
 
-Current Limitation: Both the evaluator and the stem agent itself seem to not realise when they misinterpet
-what the user is actually asking about. Might improve with an inclusion of a web search tool later on.
-
-- Updated the dataset to be a dataset of scoring examples used to tell the evaluator how to properly
-score agent's answers.
-- Created tests for the evaluator and covered identified edge cases.
-- Minor code optimizations such as moving prompts outside of service classes, etc.
+# Completed:
+- Created the MutationEngine component - successfully mutates a section of a prompt that scored
+the lowest during evaluation. 
+- Created the prompt for the llm prompt section rewriting
+- Created the tests for the MutationEngine component and installed safeguards in the entire class
 
 # Next:
-- Start Phase 3
+- Implement the Evolution Orchestrator component that will run the current agent confguration and
+the new configuration on the same task, then keep the configuration that scored better
 
 ## Development Approach
 
@@ -45,7 +41,7 @@ Each component is developed in this order:
 
 1. Skeleton & schemas
 2. Generic stem executor
-3. Initialization from examples
+3. Initialization from examples (Dropped)
 4. Evaluation system
 5. Evolution loop
 6. Safeguards and stopping
