@@ -1,4 +1,10 @@
-# Baseline Run 1
+# Baseline 01 — Phase 1 (no evaluator)
+
+> Captured during Phase 1 development, before the evaluation system existed. First end-to-end run
+> of the generic stem agent against an ambiguous research prompt. Documents the agent's untrained
+> baseline behavior: confidently answers from training-time knowledge, picks one interpretation of
+> "agentic" without acknowledging ambiguity, produces no decomposition or grounding. This run is
+> referenced as the "before" state in the project's evolution arc.
 
 ## Task
 Can you perform a research on the latest agentic development frameworks?

@@ -12,7 +12,7 @@ def main():
         return
 
     initial_config = generate_default_agent_config()
-    evolution_engine = EvolutionEngine(initial_config=initial_config, max_iterations=3)
+    evolution_engine = EvolutionEngine(initial_config=initial_config, max_iterations=7)
 
     try:
         final_config = evolution_engine.run(user_query)

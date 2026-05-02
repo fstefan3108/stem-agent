@@ -1,4 +1,11 @@
-# Baseline Run 2 - With Evaluation
+# Baseline 04 — Phase 2 (alternate prompt)
+
+> Captured during Phase 2 with a different research prompt to verify the evaluator's behavior was
+> not specific to a single input. The agent again misinterpreted the domain — listing reinforcement
+> learning frameworks (Rasa, OpenAI Gym, Stable Baselines3) instead of LLM agent frameworks
+> (LangChain, AutoGen, CrewAI). Scored 3.0 / 3.0 / 2.5. Lower than Baseline 03 because the response
+> lacked structural depth, but again the evaluator did not flag the domain mismatch. Reinforces the
+> Baseline 03 conclusion that domain alignment is not measured by the current rubric.
 
 ## Task
 Can you research for me the best AI Agentic frameworks for python development?

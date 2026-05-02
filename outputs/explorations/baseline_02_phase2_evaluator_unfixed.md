@@ -1,4 +1,11 @@
-# Baseline Run 2 - With Evaluation
+# Baseline 02 — Phase 2 (evaluator pre-fix)
+
+> Captured during Phase 2 evaluator development. The same baseline response from Baseline 01 was
+> scored by an early version of the evaluator and received 5.0 / 5.0 / 5.0. This was the first
+> observed evaluator pathology: the evaluator rewarded surface structure (headers, numbered lists)
+> without verifying domain alignment or analytical depth. This finding motivated two architectural
+> decisions: rebuilding the dataset from learning-material to scoring-rubric format, and
+> the explicit principle "do not patch the evaluator — let the system reveal its limitations."
 
 ## Task
 Can you perform a research on the latest agentic development frameworks?

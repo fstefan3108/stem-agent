@@ -16,24 +16,14 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Phase 3 Completed - Evolution, the Core of the Project
 
+## Phase 4 In Progress - The Study, Research, and Analysis of the Stem Agent System
+
 # Completed
-- MutationEngine: rewrites the lowest-scoring prompt section based on rule-based metric->section mapping
-- Mutator prompt for targeted, single-section LLM rewrites
-- EvolutionEngine: orchestrates the full loop — baseline evaluation, candidate generation, comparison against current config on the same task, accept/reject by improvement threshold
-- EvolutionRecord audit trail for every accepted and rejected mutation
-- Safeguards: no-op mutation detection, consecutive rejection early stopping, per-iteration error isolation
-- Tests for MutationEngine and EvolutionEngine covering routing, acceptance, rejection, no-op handling, and loop bounding
+- Reorganized file structure for the research side of the project
+- Saved the findings we discovered while developing from the actual experiments
 
 # Next
-# The Analysis, Study, and Research of the Developed System
-Up until now, I've been mostly focused on developing the Stem Agent as best as I can, keeping in
-mind that the core requirement of the project is to analyze and study the agent's behaviour, not
-make it as perfect as possible.
-So now comes the research part of the system, I will be experimenting with the behaviour of the stem agent that
-has a core evolution mechanism, and write up a thorough research on the whole system.
-- Run experiments across multiple prompts to gather evolution traces
-- Write up findings (4-page doc): approach, results, surprises, limitations
-- Polish README with usage instructions
+- Begin Experiment 1 — Convergence on a Clear Task
 
 ## Development Approach
 

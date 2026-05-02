@@ -1,4 +1,12 @@
-# Baseline Run 2 - With Evaluation
+# Baseline 03 — Phase 2 (evaluator post-fix)
+
+> Captured after the evaluator dataset was restructured into anchored scoring references and the
+> evaluator prompt was rewritten with a 1.0–5.0 rubric. The same prompt from Baselines 01 and 02
+> was rescored, this time receiving coverage 4.0, grounding 3.5, insight 3.5. The score reduction
+> reflects more honest scoring against rubric anchors. The agent's domain misinterpretation is
+> still not penalized — confirming that the evaluator measures structural quality but is blind to
+> domain correctness. This is documented as a known limitation and a candidate for evolution to
+> discover or fail to discover.
 
 ## Task
 Can you perform a research on the latest agentic development frameworks?
