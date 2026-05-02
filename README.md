@@ -14,17 +14,26 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 
 ## Phase 2 Completed - Evaluation of Performance
 
-## Phase 3 In Progress - Evolution, the Core of the Project
+## Phase 3 Completed - Evolution, the Core of the Project
 
-# Completed:
-- Created the MutationEngine component - successfully mutates a section of a prompt that scored
-the lowest during evaluation. 
-- Created the prompt for the llm prompt section rewriting
-- Created the tests for the MutationEngine component and installed safeguards in the entire class
+# Completed
+- MutationEngine: rewrites the lowest-scoring prompt section based on rule-based metric->section mapping
+- Mutator prompt for targeted, single-section LLM rewrites
+- EvolutionEngine: orchestrates the full loop — baseline evaluation, candidate generation, comparison against current config on the same task, accept/reject by improvement threshold
+- EvolutionRecord audit trail for every accepted and rejected mutation
+- Safeguards: no-op mutation detection, consecutive rejection early stopping, per-iteration error isolation
+- Tests for MutationEngine and EvolutionEngine covering routing, acceptance, rejection, no-op handling, and loop bounding
 
-# Next:
-- Implement the Evolution Orchestrator component that will run the current agent confguration and
-the new configuration on the same task, then keep the configuration that scored better
+# Next
+# The Analysis, Study, and Research of the Developed System
+Up until now, I've been mostly focused on developing the Stem Agent as best as I can, keeping in
+mind that the core requirement of the project is to analyze and study the agent's behaviour, not
+make it as perfect as possible.
+So now comes the research part of the system, I will be experimenting with the behaviour of the stem agent that
+has a core evolution mechanism, and write up a thorough research on the whole system.
+- Run experiments across multiple prompts to gather evolution traces
+- Write up findings (4-page doc): approach, results, surprises, limitations
+- Polish README with usage instructions
 
 ## Development Approach
 
@@ -43,6 +52,7 @@ Each component is developed in this order:
 2. Generic stem executor
 3. Initialization from examples (Dropped)
 4. Evaluation system
-5. Evolution loop
-6. Safeguards and stopping
-7. Measurement and write-up
+5. Evolution loop with Safeguards
+6. Experimental study (running 3-4 prompts, capturing logs)
+7. Write-up (4 pages)
+8. README polish + setup instructions

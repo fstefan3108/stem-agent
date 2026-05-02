@@ -2,10 +2,10 @@
 __pycache__/
 *.pyc
 .env
-outputs/*
-!outputs/.gitkeep
 .pytest_cache/
 .idea/
 *.log
 .DS_Store
 coverage/
+outputs/runtime/
+outputs/cache/

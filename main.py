@@ -1,36 +1,30 @@
 import traceback
 
-from stem_agent.agents.stem_agent import StemAgent
 from stem_agent.core.logger import logger
-from stem_agent.services.evaluation.evaluator import EvaluationService
-from stem_agent.services.evolution.mutation import MutationEngine
+from stem_agent.services.evolution.engine import EvolutionEngine
 from stem_agent.services.initialization.agent_config_factory import generate_default_agent_config
-from stem_agent.services.initialization.example_loader import load_scoring_examples
 
 
 def main():
-    default_config = generate_default_agent_config()
-    stem_agent = StemAgent(agent_config=default_config)
-
-    user_query = input("Ask the stem agent anything. It can adapt to your task's complexity over lifecycles.\n\nEnter message: ").strip()
+    user_query = input("Enter a deep research task:\n\n").strip()
     if not user_query:
         print("Please enter a task.")
         return
 
+    initial_config = generate_default_agent_config()
+    evolution_engine = EvolutionEngine(initial_config=initial_config, max_iterations=3)
+
     try:
-        answer = stem_agent.run(user_query)
-        logger.info(f"[STEM AGENT]: {answer.strip()}")
+        final_config = evolution_engine.run(user_query)
 
-        evaluator = EvaluationService(load_scoring_examples())
-        evaluation = evaluator.evaluate(user_task=user_query, stem_agent_answer=answer)
-        logger.info(f"[EVALUATOR]: {evaluation}")
-
-        mutation_engine = MutationEngine()
-        mutated_config = mutation_engine.mutate(current_config=default_config, evaluation_result=evaluation)
-        logger.info(f"[MUTATION ENGINE]: {mutated_config}")
+        logger.info("[EVOLUTION COMPLETE]")
+        logger.info(f"Final config version: {final_config.version}")
+        logger.info(f"Iterations recorded: {len(evolution_engine.history)}")
+        logger.info(f"Accepted mutations: {sum(1 for r in evolution_engine.history if r.accepted)}")
     except Exception as e:
         logger.error(f"Execution failed: {e}")
         traceback.print_exc()
+
 
 if __name__ == "__main__":
     main()

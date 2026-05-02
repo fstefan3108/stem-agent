@@ -24,7 +24,8 @@ class MutationEngine:
         mutated_section_content = self._rewrite_section_content(
             current_config=current_config,
             targeted_section=targeted_section,
-            weak_metric=weak_metric
+            weak_metric=weak_metric,
+            evaluation_result=evaluation_result
         )
 
         if not mutated_section_content.strip():
@@ -40,13 +41,14 @@ class MutationEngine:
         new_sections = dict(current_config.prompt_sections)
         new_sections[targeted_section] = mutated_prompt_section
 
-        return AgentConfig(
+        agent_config = AgentConfig(
             task_class=current_config.task_class,
             available_tools=current_config.available_tools,
             prompt_sections=new_sections,
             version=current_config.version + 1,
             created_from=f"mutation_v{current_config.version + 1}"
         )
+        return agent_config
 
     def _rewrite_section_content(
             self,
