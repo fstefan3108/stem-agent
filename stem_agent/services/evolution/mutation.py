@@ -48,6 +48,12 @@ class MutationEngine:
             version=current_config.version + 1,
             created_from=f"mutation_v{current_config.version + 1}"
         )
+
+        # Note to self: delete after research (or don't?)
+        logger.info(f"[MUTATION] target={targeted_section}")
+        logger.info(f"[MUTATION] before: {current_config.prompt_sections[targeted_section].content}")
+        logger.info(f"[MUTATION] after:  {mutated_section_content}")
+
         return agent_config
 
     def _rewrite_section_content(

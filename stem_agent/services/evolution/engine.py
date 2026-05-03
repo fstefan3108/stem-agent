@@ -60,9 +60,25 @@ class EvolutionEngine:
                         logger.info(f"[STOP] 3 consecutive rejections, ending evolution.")
                         break
 
+                # Note to self: delete after research (or don't?)
+                logger.info(
+                    f"[ITERATION {iteration}] target={mutated_section}, "
+                    f"current={current_eval.total_score:.2f} -> candidate={candidate_eval.total_score:.2f}, "
+                    f"accepted={accepted}"
+                )
+
             except Exception as e:
                 logger.error(f"[ITERATION {iteration}] failed: {e}")
                 continue
+
+        # Note to self: delete after research (or don't?)
+        target_counts = {}
+        for record in self.history:
+            key = record.mutation_target.value
+            target_counts[key] = target_counts.get(key, 0) + 1
+
+        logger.info(f"[SUMMARY] accepted: {sum(1 for r in self.history if r.accepted)} / {len(self.history)}")
+        logger.info(f"[SUMMARY] mutation targets: {target_counts}")
 
         return self.current_config
 
@@ -94,7 +110,7 @@ class EvolutionEngine:
         answer = stem_agent.run(user_task)
         logger.info(f"[STEM AGENT v{config.version}]: {answer}...")
         evaluation = self.evaluator.evaluate(user_task=user_task, stem_agent_answer=answer)
-        logger.info(f"[EVALUATION v{config.version}] coverage: {evaluation.coverage}\n grounding: {evaluation.grounding} \ninsight: {evaluation.insight}")
+        logger.info(f"[EVALUATION v{config.version}] coverage: {evaluation.coverage} grounding: {evaluation.grounding} insight: {evaluation.insight}")
         return evaluation
 
     @staticmethod
