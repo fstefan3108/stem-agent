@@ -6,6 +6,12 @@ A prototype exploring how a generic agent can specialize into a Deep Research ag
 
 AgentConfig is the key artifact: the agent's "genome". The system initializes it from examples, evaluates executions, mutates one field at a time, and accepts changes only when they improve measured performance.
 
+## Project Goal
+
+This project explores whether an AI agent can improve itself through a controlled evolution loop, without manual intervention.
+
+The focus isn't on building the best agent, but on observing how and when self-improvement works, where it fails, and why.
+
 ## Current Status
 
 ## Phase 0 Completed — Foundations & Contracts
@@ -21,9 +27,10 @@ AgentConfig is the key artifact: the agent's "genome". The system initializes it
 # Completed
 - Reorganized file structure for the research side of the project
 - Saved the findings we discovered while developing from the actual experiments
+- Completed Experiment #1
 
 # Next
-- Begin Experiment 1 — Convergence on a Clear Task
+- Begin Experiment #2 — Recovery from Domain Ambiguity
 
 ## Development Approach
 
