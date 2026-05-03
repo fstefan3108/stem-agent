@@ -6,14 +6,14 @@ A prototype exploring how an AI agent can **specialize and improve itself** thro
 
 ## How to Run
 
-1. # Clone repo
+# 1. Clone repo
    - git clone <your-repo-url>
    - cd stem-agent
 
-2. # Install dependencies
+# 2. Install dependencies
    - pip install -r requirements.txt    
 
-3. # Run evolution
+# 3. Run evolution
    - python main.py
 
 ---
