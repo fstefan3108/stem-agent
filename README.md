@@ -7,7 +7,7 @@ A prototype exploring how an AI agent can **specialize and improve itself** thro
 ## How to Run
 
 # 1. Clone repo
-   - git clone <your-repo-url>
+   - git clone https://github.com/fstefan3108/stem-agent.git
    - cd stem-agent
 
 # 2. Install dependencies
