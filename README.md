@@ -27,10 +27,10 @@ The focus isn't on building the best agent, but on observing how and when self-i
 # Completed
 - Reorganized file structure for the research side of the project
 - Saved the findings we discovered while developing from the actual experiments
-- Completed experiment #1, experiment #2 (more in /outputs directory)
+- Completed experiment #1, experiment #2, experiment #3 (more in /outputs directory)
 
 # Next
-- Begin Experiment #3 — Over-Optimization on a Simple Prompt
+- Write the cross-run analysis of the experiments
 
 ## Development Approach
 

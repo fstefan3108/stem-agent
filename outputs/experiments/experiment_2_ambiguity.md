@@ -57,7 +57,7 @@ frameworks from psychology and education, not AI agent frameworks (LangChain, Au
 
 ### Iteration 3 — rejected
 - **Mutation target:** quality_constraints (again)
-- **Score change:** 3.83 → 3.83 (delta: 0.00)
+- **Score change:** 3.83 -> 3.83 (delta: 0.00)
 - **Domain interpretation of candidate:** still Incorrect
 - **Why notable:** Third consecutive rejection triggered early stop. The mutator at temperature=0
   produced near-identical "after" content to iteration 2.
@@ -88,7 +88,7 @@ explained more thoroughly
 - total: 3.83
 
 ## Quantitative summary
-- Score delta (baseline → mature): +1.33
+- Score delta (baseline -> mature): +1.33
 - Accepted mutations: 1 out of 4 iterations
 - Acceptance rate: 25%
 - Mutation target frequency:
