@@ -17,7 +17,7 @@ mostly target `strategy` because of how the metric-to-section mapping works.
 ## Baseline (v1)
 **Response (see the full agent's response in /logs/run_001_raw.md):**
 
-[STEM AGENT v1]: When comparing gRPC and REST for backend microservices, several architectural tradeoffs come into play. Here’s a breakdown of the key differences:
+[STEM AGENT v1]: "When comparing gRPC and REST for backend microservices, several architectural tradeoffs come into play. Here’s a breakdown of the key differences:
 
 ### 1. **Protocol and Data Format**
 - **gRPC**: Uses HTTP/2 as its transport protocol, which allows for multiplexing multiple requests over a single connection. It uses Protocol Buffers (protobuf) for serialization, which is more efficient than JSON in terms of size and speed.
@@ -25,7 +25,8 @@ mostly target `strategy` because of how the metric-to-section mapping works.
 
 ### 2. **Performance**
 - **gRPC**: Generally offers better performance due to its binary serialization and support for streaming. The use of HTTP/2 allows for lower latency and better resource utilization.
-- **REST**: While REST can be performant, especially with caching strategies, it may not match the efficiency of gRPC in high-throughput scenarios.
+- **REST**: While REST can be performant, especially with caching strategies, it may not match the efficiency of gRPC in high-throughput scenarios."
+[...]
 
 [EVALUATION v1]
 - coverage: 4.0 

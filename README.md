@@ -27,10 +27,10 @@ The focus isn't on building the best agent, but on observing how and when self-i
 # Completed
 - Reorganized file structure for the research side of the project
 - Saved the findings we discovered while developing from the actual experiments
-- Completed Experiment #1
+- Completed experiment #1, experiment #2 (more in /outputs directory)
 
 # Next
-- Begin Experiment #2 — Recovery from Domain Ambiguity
+- Begin Experiment #3 — Over-Optimization on a Simple Prompt
 
 ## Development Approach
 
@@ -53,3 +53,7 @@ Each component is developed in this order:
 6. Experimental study (running 3-4 prompts, capturing logs)
 7. Write-up (4 pages)
 8. README polish + setup instructions
+
+## Experiments
+
+Experiments are located in `/outputs/experiments/`, with raw logs in `/outputs/logs/` and cross-run analysis in `/outputs/analysis/`.

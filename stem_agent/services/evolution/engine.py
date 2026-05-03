@@ -62,8 +62,9 @@ class EvolutionEngine:
 
                 # Note to self: delete after research (or don't?)
                 logger.info(
-                    f"[ITERATION {iteration}] target={mutated_section}, "
-                    f"current={current_eval.total_score:.2f} -> candidate={candidate_eval.total_score:.2f}, "
+                    f"[ITER {iteration}] target={mutated_section}, "
+                    f"baseline={current_eval.total_score:.2f} -> candidate={candidate_eval.total_score:.2f}, "
+                    f"delta={candidate_eval.total_score - current_eval.total_score:+.2f}, "
                     f"accepted={accepted}"
                 )
 
