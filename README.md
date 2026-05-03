@@ -1,59 +1,132 @@
 # Stem Agent
 
-A prototype exploring how a generic agent can specialize into a Deep Research agent through initialization from examples and controlled configuration evolution.
+A prototype exploring how an AI agent can **specialize and improve itself** through a controlled evolution loop.
 
-## Core idea
+---
 
-AgentConfig is the key artifact: the agent's "genome". The system initializes it from examples, evaluates executions, mutates one field at a time, and accepts changes only when they improve measured performance.
+## How to Run
+
+1. # Clone repo
+   - git clone <your-repo-url>
+   - cd stem-agent
+
+2. # Install dependencies
+   - pip install -r requirements.txt    
+
+3. # Run evolution
+   - python main.py
+
+---
+
+## Project Idea
+
+A stem cell doesn’t know what it will become. It receives signals and differentiates.
+
+This project asks:
+
+> Can an AI agent do the same?
+
+Instead of manually designing a task-specific agent, we start with a **minimal agent** and let it evolve into a specialized one through:
+
+- execution
+- evaluation
+- controlled mutation
+- selection
+
+---
 
 ## Project Goal
 
-This project explores whether an AI agent can improve itself through a controlled evolution loop, without manual intervention.
+This project does **not aim to build the best agent**.
 
-The focus isn't on building the best agent, but on observing how and when self-improvement works, where it fails, and why.
+It aims to answer:
 
-## Current Status
+- When does self-improvement work?
+- When does it fail?
+- What limits the evolution process?
 
-## Phase 0 Completed — Foundations & Contracts
+---
 
-## Phase 1 Completed - Generic Stem Agent
+## Core Concept
 
-## Phase 2 Completed - Evaluation of Performance
+The central artifact is:
 
-## Phase 3 Completed - Evolution, the Core of the Project
+AgentConfig = The "Genome" of the Stem Agent.
 
-## Phase 4 In Progress - The Study, Research, and Analysis of the Stem Agent System
+It defines how the agent behaves.
 
-# Completed
-- Reorganized file structure for the research side of the project
-- Saved the findings we discovered while developing from the actual experiments
-- Completed experiment #1, experiment #2, experiment #3 (more in /outputs directory)
+The system:
+1. Runs the agent
+2. Evaluates the output
+3. Mutates one part of the config
+4. Accepts/Rejects the mutation 
 
-# Next
-- Write the cross-run analysis of the experiments
+This creates a **controlled evolution loop**.
 
-## Development Approach
+---
 
-Each component is developed in this order:
+## System's Evolution Loop Diagram
 
-1. Analyze before coding
-2. Build minimal working prototype
-3. Cover edge cases
-4. Add tests
-5. Optimize only if needed
-6. Update readme
+![Evolution Loop](assets/evolution_loop.png)
 
-## Planned phases
+## Core System Components
 
-1. Skeleton & schemas
-2. Generic stem executor
-3. Initialization from examples (Dropped)
-4. Evaluation system
-5. Evolution loop with Safeguards
-6. Experimental study (running 3-4 prompts, capturing logs)
-7. Write-up (4 pages)
-8. README polish + setup instructions
+# Agent
+- Generates responses using current AgentConfig.
+
+# Evaluator
+- Scores responses based on:
+  - Coverage
+  - Grounding
+  - Insight
+
+# Mutator
+
+Rewrites exactly one field of the configuration per iteration.
+
+# Evolution Loop
+
+- Controls:
+  - execution
+  - mutation
+  - selection (accept/reject)
 
 ## Experiments
 
-Experiments are located in `/outputs/experiments/`, with raw logs in `/outputs/logs/` and cross-run analysis in `/outputs/analysis/`.
+- Located in:
+  - /outputs/experiments/
+  - /outputs/logs/
+  - /outputs/analysis.md
+  - Experiment 1 — Clear Task
+  - No evolution (score ceiling reached)
+  - Experiment 2 — Ambiguous Task
+  - Improved structure, wrong domain
+  - Experiment 3 — Simple Task
+  - Over-optimization (worse answer, higher score)
+
+## Key Findings
+- The system optimizes what is measured
+- It does not correct wrong interpretations
+- It can produce overly complex answers
+- Evolution converges quickly, not gradually
+- Score != real usefulness
+
+## Limitations
+- No domain correctness check
+- No task complexity awareness
+- No exploration (low mutation diversity)
+- Score ceiling (~4.0 without tools)
+
+## Future Work
+- Ask-first mechanism (clarify ambiguous queries)
+- Web search integration
+- Simplicity control (prevent over-optimization)
+- Multi-task evaluation
+
+## Development Approach
+- Each feature was built using:
+  - Analyze before coding
+  - Build minimal working version
+  - Handle edge cases
+  - Test behavior
+  - Optimize only if needed
